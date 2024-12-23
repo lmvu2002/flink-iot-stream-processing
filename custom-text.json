@@ -1,0 +1,17 @@
+// Using this json for Custom Text section in GenerateFlowFile Processor
+  {
+    "device_id": "${literal('1c:bf:ce:15:ec:4d,b8:27:eb:bf:9d:51,00:0f:00:70:91:0a,'):getDelimitedField(${random():mod(3):plus(1)}, ',')}",
+    "co": ${random():multiply(0.0061):plus(0.0011)},
+    "humidity": ${random():multiply(33.0):plus(45.0)},
+    "motion": ${random():mod(2):toString():replace('0', false):replace('1',true)},
+    "temp": ${random():multiply(19.0):plus(17.0)},
+    "amp_hr": ${random():multiply(1.7):plus(0.1)},
+    "event_ts": ${now():toNumber()}
+  }
+  
+  // co from 0.0011 to 0.0072
+  // humidity from 45.00, 78.00
+  // motion can be true or false
+  // temp from 17.00 to 36.00
+  // amp_hr from 0.10 to 1.80
+  
